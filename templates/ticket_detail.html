@@ -1,0 +1,21 @@
+{% block content %}
+
+<p><a href='/home'>Home</a></p>
+<h1>BugTicket Details:</h1>
+<p><a href='/assignticket/{{ ticket.id }}'>Assign Ticket</a></p>
+<p><a href='/assigncomplete/{{ ticket.id }}'>Assign Complete</a></p>
+<p><a href='/assigninvalid/{{ ticket.id }}'>Assign Invalid</a></p>
+<p><a href='/editbug/{{ ticket.id }}'>Edit Ticket</a></p>
+
+<h4>{{ ticket.title.id }}</h4>
+<h7>{{ ticket.description.id }}</h7>
+
+<ul>
+    <li>Date Submitted: {{ ticket.date }}</li>
+    <li>Status of BugTicket: {{ ticket.status }}</li>
+    <li>Creator: <a href='/user/{{ticket.creator.id}}'>{{ticket.creator.display_name}}</a></li>
+    <li>User Assigned To: <a href='/user/{{ticket.user_assigned_to.id}}'>{{ticket.user_assigned_to.display_name}}</a></li>
+    <li>Completed By: <a href='/user/{{ticket.user_who_completed.id}}'>{{ticket.user_who_completed.display_name}}</a></li>
+</ul>
+
+{% endblock %}

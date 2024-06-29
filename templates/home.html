@@ -1,0 +1,75 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bug.css' %}">
+
+<body>
+
+
+{% block content %}
+
+Hi, <a href="/user/{{user.id}}">{{user}}</a>
+
+<p><a href="/addbug">Add a new bug here</a></p>
+
+<p><a href="/logout">Log out here</a></p>
+
+<p>
+    <h2>For new bugs:</h2>
+{% if new %}
+<ul>
+    {% for ticket in new %}
+    <li> {% include 'bugticket.html' %}</li>
+
+    {% endfor %}
+</ul>
+
+{% else %}
+<h4>No new bugs.</h4>
+{% endif %}
+</p>
+
+<p> 
+    <h2>For Bugs In Progress:</h2>
+{% if in_progress %}
+<ul>
+    {% for ticket in in_progress %}
+    <li>{% include 'bugticket.html' %}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h4>No bugs in progress.</h4>
+{% endif %}
+</p>
+
+<p>
+    <h2>For Bugs Complete:</h2>
+{% if Done %}
+<ul>
+    {% for ticket in Done %}
+    <li>{% include 'bugticket.html' %}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h4>No completed bugs</h4>
+{% endif %}
+</p>
+
+<p>
+    <h2>For Invalid:</h2>
+{% if Invalid %}
+<ul>
+    {% for ticket in Invalid %}
+    <li>{% include 'bugticket.html' %}</li>
+    {% endfor %}
+</ul>
+{% else %}
+
+<h4>No invalid bugs</h4>
+{% endif %}
+</p>
+
+{% endblock %}
+
+</body>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bug.css' %}">
+
+<body>
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+You are logged in as, <a href="/user/{{user.id}}">{{user}}</a>
+
+<!-- You are logged in as <a href='/user/{{request.user.id}}/'>{{ request.user.display_name }}</a> -->
+<a href='/home'>Home</a>
+<a href='/logout'>Log Out</a>
+
+{% else %}
+
+You are not logged in! Please login or signup!
+
+<a href='/login'>Log In Here!</a>
+<a href='/signup'>Sign Up Here!</a>
+
+{% endif %}
+
+{% endblock %}
+
+
+</body>

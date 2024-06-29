@@ -1,0 +1,32 @@
+{% block content %}
+
+<p><a href='/home'>Home</a></p>
+
+<h1>Logged In User Details:</h1>
+
+<p>Hi {{ user }}</p> you are logged in as<p> {{ user }} </p>
+
+<p>
+Assigned Tickets:
+<ul>
+    {% for bug in assigned_to %}
+    <li><a href='/bug/{{ ticket.id }}'>{{ bug }}</a></li>
+    {% endfor %}
+</ul>
+
+Created Tickets:
+<ul>
+    {% for bug in creator %}
+    <li><a href='/bug/{{ ticket.id }}'>{{ bug }}</a></li>
+    {% endfor %}
+</ul>
+
+Completed Tickets:
+<ul>
+    {% for bug in user_completed %}
+    <li><a href='/bug/{{ ticket.id }}'>{{ bug }}</a></li>
+    {% endfor %}
+</ul>
+</p>
+
+{% endblock %}
