@@ -1,4 +1,8 @@
 body {
-    background-color: blue;
     font-family: verdana;
+    background-image: url("./images/snowmountainsbck.jpg");
+    background-size: 1000px;
+    width: 500px;
+    height: 500px;
+    background-repeat: 0;
   }

@@ -1,3 +1,9 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bug.css' %}">
+
+<body>
+
 {% block content %}
 
 <p><a href='/home'>Home</a></p>
@@ -19,3 +25,5 @@
 </ul>
 
 {% endblock %}
+
+</body>

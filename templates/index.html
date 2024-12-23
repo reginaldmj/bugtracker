@@ -1,8 +1,8 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'bug.css' %}">
-
 <body>
+<link rel="stylesheet" href="{% static '/bug.css' %}">
+
 {% block content %}
 
 {% if request.user.is_authenticated %}

@@ -1,6 +1,14 @@
+<body>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bug.css' %}">
+
 <form action='' method="POST">
     {% csrf_token %}
     {{ form.as_p}}
     <input type="submit" value="Sign Up Here!">
 </form>
 <a href='/signup'><button>Login</button></a>
+
+</body>
