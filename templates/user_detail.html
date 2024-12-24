@@ -1,13 +1,14 @@
 {% block content %}
 
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'bug.css' %}">
 
 <body>
 
 <p><a href='/home'>Home</a></p>
 
-<h1>Logged In User Details:</h1>
+<h1>User Details:</h1>
 
 <p>Hi {{ user }}</p> you are logged in as<p> {{ user }} </p>
 

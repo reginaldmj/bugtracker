@@ -76,8 +76,8 @@ def add_bug(request):
                 description=data['description'],
                 creator=request.user,
                 status='N',
-                user_assigned_to=None,
-                user_who_completed=None,
+                user_assigned_to=request.user,
+                user_who_completed=request.user,
             )
             
             return HttpResponseRedirect(reverse('home'))
@@ -90,7 +90,7 @@ def add_bug(request):
 def edit_bug(request, id):
     ticket = MyTicket.objects.get(id=id)
     if request.method == 'POST':
-        form = AddBugTicketForm(request.POST, instance=bug)
+        form = AddBugTicketForm(request.POST, instance=ticket)
         form.save()
         return HttpResponseRedirect(reverse('bug', args=(id,)))
     form = AddBugTicketForm(instance=ticket)

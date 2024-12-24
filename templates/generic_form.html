@@ -1,9 +1,15 @@
-{% if message %}
+<body>
+    
+{% load static %}
+<link rel="stylesheet" href="{% static 'bug.css' %}">
+    
+    {% if message %}
     <h1>{{  message }}</h1>
-{% endif %}
-<form action="" method = "POST">
-    <!-- security measure, *it is okay*, stops flooding from fake responses-->
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit!">
-</form>
+    {% endif %}
+    <form action="" method = "POST">
+        <!-- security measure, *it is okay*, stops flooding from fake responses-->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit!">
+    </form>
+</body>

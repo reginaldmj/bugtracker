@@ -1,4 +1,9 @@
-{% load static %}
+<body>
 
-<a href="/bug/{{ticket.id}}/"> {{ ticket }} </a>
-{{ ticket.date }}
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bug.css' %}">
+    
+    <a href="/bug/{{ticket.id}}/"> {{ ticket }} </a>
+    {{ ticket.date }}
+</body>
