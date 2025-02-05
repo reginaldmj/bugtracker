@@ -6,13 +6,17 @@ Site is limited to authenticated users, only. Each user has an overview page whe
 
 Usage
 
-poetry init
+poetry init 
+
 poetry install
+
 poetry shell
+
 python manage.py migrate
 
 
 python manage.py createsuperuser
+
 python manage.py runserver
 
 to view the project you can open localhost:8000/
